@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --main-color: #f7bf21;
+    --light_body_second_bg: #f2f1ee;
+    --light-body_main-bg: #fbfbfb;
+    --light-card_gray-bg: #f0f0f0;
+    --light-card_strong-gray-bg: #d6d6d6;
+    --lighr-black-text: #111111;
+    --light-gray-text: #c2c2c2;
+    --light-white-text: #f0f0f0;
+}
