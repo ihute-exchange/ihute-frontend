@@ -1,10 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  ccontent: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        main: "#f7bf21",
+        mainColor: "#f79a21",
         lightBodySecondBg: "#f2f1ee",
         lightBodyMainBg: "#fbfbfb",
         lightCardGrayBg: "#f0f0f0",
