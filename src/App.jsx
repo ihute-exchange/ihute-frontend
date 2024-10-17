@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
-import Overview from "./pages/Overview";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return <>
   <HashRouter>
     <Routes>
-      <Route path="/" element={<Overview />} />
+      <Route path="/" element={<Dashboard />} />
     </Routes>
   </HashRouter>
   </>;

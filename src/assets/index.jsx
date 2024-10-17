@@ -1,0 +1,1 @@
+export { default as IhuteLogo } from './logo.png'
