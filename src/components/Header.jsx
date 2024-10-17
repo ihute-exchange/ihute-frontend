@@ -1,24 +1,28 @@
-import React from 'react'
-import { LuBell, LuPlus, LuSearch } from 'react-icons/lu'
+import React from "react";
+import { LuBell, LuMenu, LuPlus, LuSearch, LuX } from "react-icons/lu";
 
-function Header() {
+function Header({ title, openSidebar }) {
   return (
-    <div className='flex items-center justify-between text-lightBlackText p-4'>
-        <div className='flex flex-col'>
-            <h1 className='text-lg font-medium text-lightBlackText/80'>Good Afternoon, Kevin!</h1>
-            <h1 className='text-sm font-medium text-lightBlackText/60'>Oct 17 2024 </h1>
-        </div>
-        <div className="flex items-center justify-end">
-        <button className="text-lightBlackText/50 hover:text-mainColor p-2 h-[35px] aspect-square flex items-center justify-center hover:bg-stone-200/50 rounded-xl">
-          <LuSearch className="text-xl" />
+    <div className="flex items-center justify-between text-lightBlackText p-4 border-b">
+      <div onClick={openSidebar} className="flex items-center gap-1">
+        <button className="text-3xl p-1 rounded-md hidden max-lg:flex">
+          <LuMenu />
         </button>
-        <button className="text-lightBlackText/50 hover:text-mainColor p-1 h-[35px] aspect-square flex items-center justify-center hover:bg-stone-200/50 rounded-xl">
-          <LuBell className="text-xl" />
+        <h1 className="text-2xl font-semibold text-lightBlackText/80">
+          {title}
+        </h1>
+      </div>
+      <div className="flex items-center justify-end">
+        <button className="text-lightBlackText/50 hover:text-mainColor p-2 h-[35px] max-md:h-[45px] aspect-square flex items-center justify-center hover:bg-stone-200/50 rounded-xl">
+          <LuSearch className="text-xl max-md:text-2xl" />
+        </button>
+        <button className="text-lightBlackText/50 hover:text-mainColor p-1 h-[35px] max-md:h-[45px] aspect-square flex items-center justify-center hover:bg-stone-200/50 rounded-xl">
+          <LuBell className="text-xl max-md:text-2xl" />
         </button>
         <div></div>
-        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

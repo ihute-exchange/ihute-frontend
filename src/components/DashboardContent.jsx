@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import {
   LuArrowDownLeftFromCircle,
@@ -11,25 +11,49 @@ import { ConfigProvider, Select } from "antd";
 import { Link } from "react-router-dom";
 import Contacts from "../utils/Contacts";
 import Statistics from "./Statistics";
+import Transactions from "./Transactions";
 
 function DashboardContent() {
-  const onChange = (value) => {
-    console.log(`selected ${value}`);
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [animateShowSidebar, setAnimateShowSidebar] = useState(false);
+  const openSidebar = () => {
+    setShowSidebar(true);
+    setTimeout(() => {
+      setAnimateShowSidebar(true);
+    }, 50);
   };
-  const onSearch = (value) => {
-    console.log("search:", value);
+  const closeSidebar = () => {
+    setAnimateShowSidebar(false);
+    setTimeout(() => {
+      setShowSidebar(false);
+    }, 100);
   };
   return (
-    <div className="w-fit flex-1 h-full white flex flex-col">
-      <Header />
-      <div className="w-full flex-1 overflow-y-auto py-1 px-4">
-        <div className="grid grid-cols-2 gap-5">
+    <div
+      className={`${
+        showSidebar && "max-lg:ml-[250px]"
+      } max-lg:transition-all max-lg:duration-200 max-lg:ease-in-out w-fit max-lg:w-full flex-1 h-full white flex flex-col z-20 bg-white relative`}
+    >
+      {showSidebar && (
+        <div
+          onClick={closeSidebar}
+          className={`w-full h-full absolute top-0 left-0 backdrop-blur-sm bg-black/20 z-20 transition-all duration-300 ease-in-out ${
+            animateShowSidebar ? "opacity-100" : "opacity-0"
+          }`}
+        ></div>
+      )}
+      <Header
+        title={"Dashboard"}
+        openSidebar={openSidebar}
+      />
+      <div className="w-full flex-1 overflow-y-auto py-1 px-5 flex flex-col gap-5 pt-5">
+        <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5">
           {/* balance & contacts */}
           <div className="w-full flex flex-col gap-6">
             {/* balance */}
-            <div className="w-full ring-1 ring-stone-200 rounded-xl p-5 flex flex-col gap-5">
+            <div className="w-full ring-1 ring-stone-200 rounded-2xl p-5 flex flex-col gap-5 bg-stone-50/30">
               {/* card header */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-3">
                 <div className="flex flex-col">
                   <h1 className="text-xl font-medium text-lightBlackText/80">
                     Total Balance
@@ -46,14 +70,15 @@ function DashboardContent() {
                 </button>
               </div>
               {/* card content */}
-              <div className="ring-1 ring-stone-200 rounded-xl p-4 flex flex-col gap-2">
+              <div className="ring-1 ring-stone-200 rounded-2xl p-4 flex flex-col gap-2 bg-white ">
                 <h1 className="text-sm font-medium text-lightBlackText/60">
                   Available funds
                 </h1>
                 {/* balance */}
                 <div className="flex max-lg:flex-col gap-2 items-center justify-between">
-                  <h1 className="text-3xl font-semibold text-lightBlackText/80">
-                    $12,233<span className="text-lightBlackText/40">.23</span> <span className="text-lg">USD</span>
+                  <h1 className="text-3xl font-semibold text-lightBlackText/80 py-2">
+                    $12,233<span className="text-lightBlackText/40">.23</span>{" "}
+                    <span className="text-lg">USD</span>
                   </h1>
                   <div className="max-lg:w-full">
                     <ConfigProvider
@@ -107,9 +132,9 @@ function DashboardContent() {
               </div>
             </div>
             {/* contacts */}
-            <div className="w-full ring-1 ring-stone-200 rounded-xl p-5 flex flex-col gap-5">
+            <div className="w-full ring-1 ring-stone-200 rounded-2xl p-5 flex flex-col gap-5">
               {/* card header */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-3">
                 <div className="flex flex-col">
                   <h1 className="text-xl font-medium text-lightBlackText/80">
                     Recent Contacts
@@ -126,8 +151,8 @@ function DashboardContent() {
                 </button>
               </div>
               {/* card content */}
-              <div className=" rounded-xl flex items-center justify-between gap-5">
-                <div className="flex-1 flex items-center justify-start gap-1 overflow-x-auto hidden_scrollbar p-[2px]">
+              <div className=" rounded-xl flex items-center justify-between max-lg:flex-col gap-5">
+                <div className="max-lg:w-full flex-1 flex items-center justify-start gap-1 overflow-x-auto hidden_scrollbar p-[2px]">
                   {Contacts.map((contact, index) => (
                     <Link
                       key={index}
@@ -137,17 +162,17 @@ function DashboardContent() {
                       {contact.pfp !== "" ? (
                         <img
                           src={contact.pfp}
-                          className="min-h-[40px] pointer-events-none max-h-[40px] h-fit min-w-[40px] rounded-full object-cover bg-stone-100 ring-1 ring-stone-200 aspect-square"
+                          className="min-h-[40px] max-md:min-h-14 pointer-events-none max-h-[40px] max-md:max-h-14 h-fit max-md:h-14 min-w-[40px] max-md:min-w-14 rounded-full object-cover bg-stone-100 ring-1 ring-stone-200 aspect-square"
                         />
                       ) : (
-                        <div className="h-[40px] text-xl aspect-square rounded-full flex items-center justify-center font-semibold bg-mainColor text-white">
+                        <div className="h-[40px] max-md:h-14 text-xl max-md:text-3xl aspect-square rounded-full flex items-center justify-center font-semibold bg-mainColor text-white">
                           {contact.name.charAt(0)}
                         </div>
                       )}
                     </Link>
                   ))}
                 </div>
-                <div className="min-w-fit">
+                <div className="min-w-fit max-lg:w-full">
                   <button className="h-[40px] select-none w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
                     <LuUserPlus />
                     Add New
@@ -157,9 +182,9 @@ function DashboardContent() {
             </div>
           </div>
           {/* statistics */}
-          <div className="w-full ring-1 ring-stone-200 rounded-xl p-5 flex flex-col gap-5">
+          <div className="w-full ring-1 ring-stone-200 rounded-2xl p-5 flex flex-col gap-5">
             {/* card header */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-3">
               <div className="flex flex-col">
                 <h1 className="text-xl font-medium text-lightBlackText/80">
                   Virtual Card
@@ -176,7 +201,7 @@ function DashboardContent() {
               </button>
             </div>
             {/* card content */}
-            <div className="ring-1 ring-stone-200 rounded-xl p-4 flex flex-col gap-2">
+            <div className="ring-1 ring-stone-200 rounded-2xl p-4 flex flex-col gap-2">
               {/* card details */}
               <div className="flex items-center justify-start gap-2 overflow-x-auto hidden_scrollbar">
                 {/* card number */}
@@ -218,7 +243,7 @@ function DashboardContent() {
               </div>
             </div>
             {/* card header */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-3">
               <div className="flex flex-col">
                 <h1 className="text-xl font-medium text-lightBlackText/80">
                   Statistics
@@ -237,6 +262,9 @@ function DashboardContent() {
             {/* chart */}
             <Statistics />
           </div>
+        </div>
+        <div>
+          <Transactions />
         </div>
       </div>
     </div>
