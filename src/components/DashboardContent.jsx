@@ -37,7 +37,7 @@ function DashboardContent() {
       {showSidebar && (
         <div
           onClick={closeSidebar}
-          className={`w-full h-full absolute top-0 left-0 backdrop-blur-sm bg-black/20 z-20 transition-all duration-300 ease-in-out ${
+          className={`w-full h-full absolute top-0 left-0 bg-black/10 z-30 transition-all duration-300 ease-in-out ${
             animateShowSidebar ? "opacity-100" : "opacity-0"
           }`}
         ></div>
@@ -51,7 +51,7 @@ function DashboardContent() {
           {/* balance & contacts */}
           <div className="w-full flex flex-col gap-6">
             {/* balance */}
-            <div className="w-full ring-1 ring-stone-200 rounded-2xl p-5 flex flex-col gap-5 bg-stone-50/30">
+            <div className="w-full ring-1 ring-stone-100 rounded-2xl p-5 flex flex-col gap-5 bg-stone-50/30">
               {/* card header */}
               <div className="flex items-center justify-between gap-3">
                 <div className="flex flex-col">
@@ -70,7 +70,7 @@ function DashboardContent() {
                 </button>
               </div>
               {/* card content */}
-              <div className="ring-1 ring-stone-200 rounded-2xl p-4 flex flex-col gap-2 bg-white ">
+              <div className="ring-1 ring-stone-100 rounded-2xl p-4 flex flex-col gap-2 bg-white ">
                 <h1 className="text-sm font-medium text-lightBlackText/60">
                   Available funds
                 </h1>
@@ -80,7 +80,7 @@ function DashboardContent() {
                     $12,233<span className="text-lightBlackText/40">.23</span>{" "}
                     <span className="text-lg">USD</span>
                   </h1>
-                  <div className="max-lg:w-full">
+                  <div className="max-lg:w-full flex items-center justify-start max-lg:mb-1">
                     <ConfigProvider
                       theme={{
                         token: {
@@ -96,7 +96,6 @@ function DashboardContent() {
                         showSearch
                         placeholder="Select a person"
                         optionFilterProp="label"
-                        className="max-lg:w-full"
                         defaultValue={{
                           value: "USD",
                           label: "USD",
@@ -132,7 +131,7 @@ function DashboardContent() {
               </div>
             </div>
             {/* contacts */}
-            <div className="w-full ring-1 ring-stone-200 rounded-2xl p-5 flex flex-col gap-5">
+            <div className="w-full ring-1 ring-stone-100 rounded-2xl p-5 flex flex-col gap-5">
               {/* card header */}
               <div className="flex items-center justify-between gap-3">
                 <div className="flex flex-col">
@@ -182,7 +181,7 @@ function DashboardContent() {
             </div>
           </div>
           {/* statistics */}
-          <div className="w-full ring-1 ring-stone-200 rounded-2xl p-5 flex flex-col gap-5">
+          <div className="w-full ring-1 ring-stone-100 rounded-2xl p-5 flex flex-col gap-5">
             {/* card header */}
             <div className="flex items-center justify-between gap-3">
               <div className="flex flex-col">

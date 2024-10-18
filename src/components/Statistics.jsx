@@ -111,10 +111,11 @@ function Statistics() {
           <CartesianGrid strokeDasharray="5 5" />
           <XAxis
             dataKey="date"
+            tick={{ fontSize: 12 }}
             tickFormatter={(date) => {
               const today = new Date();
               const dateObj = new Date(date);
-              const options = { weekday: "long" };
+              const options = { weekday: "short" };
 
               // Check if the date is today or yesterday
               if (dateObj.toDateString() === today.toDateString()) {
