@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        mainColor: "#714dff",
+        mainColor: "#026fc7",
         lightBodySecondBg: "#fafafa",
         lightBodyMainBg: "#fbfbfb",
         lightCardGrayBg: "#f0f0f0",
@@ -15,6 +15,9 @@ export default {
         lightBlackText: "#111111",
         lightGrayText: "#c2c2c2",
         lightWhiteText: "#f0f0f0",
+      },
+      fontFamily: {
+        suse: ["SUSE", "sans-serif"]
       },
     },
   },

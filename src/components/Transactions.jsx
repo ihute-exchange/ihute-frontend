@@ -34,7 +34,7 @@ function Transactions() {
   return (
     <div className="w-full ring-1 ring-stone-100 rounded-2xl flex flex-col mb-5 overflow-hidden relative">
       {/* card header */}
-      <div className="flex items-center justify-between p-5 max-md:flex-col max-md:items-start gap-4">
+      <div className="flex items-center justify-between p-5 flex-wrap max-md:items-start gap-4">
         <div className="flex flex-col">
           <h1 className="text-xl font-medium text-lightBlackText/80">
             Transactions
@@ -99,28 +99,31 @@ function Transactions() {
             </>
           )}{" "}
         </div>
-        <table className="w-full text-sm text-left table-fixed max-lg:table-auto ">
+        <table className="w-full text-sm text-left table-auto">
           <thead className="text-xs text-lightBlackText/70 uppercase bg-stone-100 border-b border-t border-stone-200">
             <tr>
-              <th scope="col" className=" py-3 text-center w-[60px]">
-                N <sup>o</sup>
+              <th scope="col" className="truncate py-3 text-center w-[60px]">
+                N<sup>o</sup>
               </th>
-              <th scope="col" className=" py-3">
+              <th scope="col" className="truncate py-3">
                 Name
               </th>
-              <th scope="col" className=" py-3">
+              <th scope="col" className="truncate py-3">
                 Date
               </th>
-              <th scope="col" className=" py-3">
+              <th scope="col" className="truncate py-3">
                 Type
               </th>
-              <th scope="col" className=" py-3">
+              <th scope="col" className="truncate py-3">
                 Amount
               </th>
-              <th scope="col" className=" py-3 w-[100px]">
+              <th scope="col" className="truncate py-3 w-[100px]">
                 Status
               </th>
-              <th scope="col" className=" py-3 w-[120px] text-center max-md:pr-3">
+              <th
+                scope="col"
+                className="truncate py-3 w-[120px] text-center max-md:pr-3"
+              >
                 Actions
               </th>
             </tr>
@@ -130,18 +133,23 @@ function Transactions() {
               <tr
                 key={index}
                 className={`text-base whitespace-nowrap border-b border-stone-200 text-lightBlackText/80 
-                ${selectedTransactions.includes(transaction.name) ? 'bg-mainColor/5 ' : 'bg-transparent '}
-                `}>
+          ${
+            selectedTransactions.includes(transaction.name)
+              ? "bg-mainColor/5 "
+              : "bg-transparent "
+          }
+        `}
+              >
                 <td className="truncate py-2 max-lg:pr-5 px-2 text-center">
                   {index + 1}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5 text-left font-medium text-text-color-black whitespace-nowrap tracking-tight flex items-center gap-2 ">
+                <td className="truncate py-2 max-lg:pr-5 text-left font-medium text-lightBlackText/80 tracking-tight flex items-center gap-2">
                   {transaction.name}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5 ">
+                <td className="truncate py-2 max-lg:pr-5">
                   {transaction.date}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5 ">
+                <td className="truncate py-2 max-lg:pr-5">
                   {transaction.type}
                 </td>
                 <td className="truncate py-2 max-lg:pr-5 text-text-color-black">

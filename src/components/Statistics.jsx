@@ -87,7 +87,7 @@ function Statistics() {
             </div>
           </p>
           <p className="text-sm flex items-center justify-start gap-1 pb-1">
-            <div className="h-[20px] w-[4px] rounded-md bg-[#714dff]"></div>
+            <div className="h-[20px] w-[4px] rounded-md bg-[#026fc7]"></div>
             <div>
               Recieved:{" "}
               <span className="font-semibold">{`$${Money(payload[0].value)}`}</span>
@@ -135,7 +135,7 @@ function Statistics() {
           <Bar
             dataKey="out"
             stackId="a"
-            fill="#714dff"
+            fill="#026fc7"
             shape={<RoundedBar />}
           />
           <Bar dataKey="in" stackId="a" fill="#dff976" shape={<RoundedBar />} />

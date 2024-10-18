@@ -17,6 +17,7 @@ import {
   LuUserPlus,
   LuUserPlus2,
   LuUsers2,
+  LuWallet,
   LuWalletCards,
   LuX,
 } from "react-icons/lu";
@@ -24,11 +25,12 @@ import { Link, useLocation } from "react-router-dom";
 import { Avatar, Space } from "antd";
 import SidebarSectionTitle from "./SidebarSectionTitle";
 import { TbHeadset } from "react-icons/tb";
+import { IoCardOutline } from "react-icons/io5";
 
 function Sidebar({ closeSidebar }) {
   const location = useLocation();
   return (
-    <div className="w-[255px] max-sm:w-full z-10 h-svh sticky top-0 left-0 max-lg:fixed flex flex-col bg-white text-lightBlackText border-r border-stone-100  overflow-y-auto">
+    <div className="w-[255px] min-w-[255px] max-sm:w-full z-10 h-svh sticky top-0 left-0 max-lg:fixed flex flex-col bg-white text-lightBlackText border-r border-stone-100  overflow-y-auto">
       <div className="flex items-center justify-between px-2 pt-2 gap-1 select-none">
         <Link
           to="/"
@@ -36,7 +38,7 @@ function Sidebar({ closeSidebar }) {
         >
           <Avatar
             style={{
-              backgroundColor: "#714dff",
+              backgroundColor: "#026fc7",
               color: "#fff",
               fontWeight: "600",
               fontSize: "16px",
@@ -78,17 +80,17 @@ function Sidebar({ closeSidebar }) {
         </Link>
         <SidebarSectionTitle title={"Management"} />
         <Link
-          to="/"
+          to="/wallet"
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
-            location.pathname === "/cards"
+            location.pathname === "/wallet"
               ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
         >
-          <LuWalletCards className="text-xl max-lg:text-2xl" />
-          Cards
+          <LuWallet className="text-xl max-lg:text-2xl" />
+          Wallet
         </Link>
         <Link
           to="/"

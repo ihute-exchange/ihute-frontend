@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: "Inter", sans-serif !important;
+  font-family: "Inter", sans-serif;
   outline-color: #86aac7;
 }
 
@@ -14,8 +14,7 @@ body {
 }
 
 :root {
-  /* --main-color: #026fc7; */
-  --main-color: #714dff;
+  --main-color: #026fc7;
   --light_body_second_bg: #fafafa;
   --light-body_main-bg: #fbfbfb;
   --light-card_gray-bg: #f0f0f0;
@@ -30,28 +29,6 @@ body {
   width: 0;
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .active_sidebar_link::after {
   content: "";
   position: absolute;
@@ -63,14 +40,20 @@ body {
   width: 5px;
   border-radius: 15px;
   background-color: var(--main-color);
-  animation: indicatorSidebarLink 0.5s forwards;
+  animation: indicatorSidebarLink 0.2s forwards;
 }
 
 @keyframes indicatorSidebarLink {
   from {
     height: 0;
+    opacity: 0;
   }
   to {
     height: 70%;
   }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
 }

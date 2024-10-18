@@ -35,6 +35,10 @@ function DashboardContent({
       )}
       <Header title={"Dashboard"} openSidebar={openSidebar} />
       <div className="w-full flex-1 overflow-y-auto py-1 px-5 flex flex-col gap-5 pt-5">
+        <div className="text-sm text-lightBlackText/70 flex items-center gap-1">
+          <Link to="/">Dashboard</Link>
+          {/* <LuChevronRight className="text-mainColor" /> */}
+        </div>
         <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5">
           {/* balance & contacts */}
           <div className="w-full flex flex-col gap-6">
@@ -63,16 +67,16 @@ function DashboardContent({
                   Available funds
                 </h1>
                 {/* balance */}
-                <div className="flex max-lg:flex-col gap-2 items-center justify-between">
+                <div className="flex max-lg:flex-col gap-2 items-center justify-start">
                   <h1 className="text-3xl font-semibold text-lightBlackText/80 py-2">
                     $12,233<span className="text-lightBlackText/40">.23</span>{" "}
-                    <span className="text-lg">USD</span>
+                    {/* <span className="text-lg">USD</span> */}
                   </h1>
                   <div className="max-lg:w-full flex items-center justify-start max-lg:mb-1">
                     <ConfigProvider
                       theme={{
                         token: {
-                          colorPrimaryBg: "#714dff40",
+                          colorPrimaryBg: "#026fc740",
                           colorBgContainer: "#f1f0ef",
                           fontSize: 14,
                           lineWidth: 0,
