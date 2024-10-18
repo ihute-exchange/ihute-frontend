@@ -13,25 +13,16 @@ import Contacts from "../utils/Contacts";
 import Statistics from "./Statistics";
 import Transactions from "./Transactions";
 
-function DashboardContent() {
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [animateShowSidebar, setAnimateShowSidebar] = useState(false);
-  const openSidebar = () => {
-    setShowSidebar(true);
-    setTimeout(() => {
-      setAnimateShowSidebar(true);
-    }, 50);
-  };
-  const closeSidebar = () => {
-    setAnimateShowSidebar(false);
-    setTimeout(() => {
-      setShowSidebar(false);
-    }, 100);
-  };
+function DashboardContent({
+  showSidebar,
+  animateShowSidebar,
+  openSidebar,
+  closeSidebar,
+}) {
   return (
     <div
       className={`${
-        showSidebar && "max-lg:ml-[250px]"
+        showSidebar && "max-lg:ml-[255px] max-sm:ml-[100%]"
       } max-lg:transition-all max-lg:duration-200 max-lg:ease-in-out w-fit max-lg:w-full flex-1 h-full white flex flex-col z-20 bg-white relative`}
     >
       {showSidebar && (
@@ -42,10 +33,7 @@ function DashboardContent() {
           }`}
         ></div>
       )}
-      <Header
-        title={"Dashboard"}
-        openSidebar={openSidebar}
-      />
+      <Header title={"Dashboard"} openSidebar={openSidebar} />
       <div className="w-full flex-1 overflow-y-auto py-1 px-5 flex flex-col gap-5 pt-5">
         <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5">
           {/* balance & contacts */}
@@ -84,7 +72,7 @@ function DashboardContent() {
                     <ConfigProvider
                       theme={{
                         token: {
-                          colorPrimaryBg: "#026fc740",
+                          colorPrimaryBg: "#714dff40",
                           colorBgContainer: "#f1f0ef",
                           fontSize: 14,
                           lineWidth: 0,

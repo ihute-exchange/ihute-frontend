@@ -16,7 +16,7 @@ function Statistics() {
     { in: 2430, out: 1024.42 }, // For yesterday
     { in: 2420, out: 1042. }, // For 3days ago
     { in: 1033, out: 2822.30 }, // For 4days ago
-    { in: 2605, out: 3202.34 }, // For 5days ago
+    { in: 605.22, out: 2902.34 }, // For 5days ago
     { in: 3345, out: 1032 }, // For 6days ago
     { in: 2502.43, out: 1024.23 }, // For 7days ago
   ];
@@ -80,17 +80,17 @@ function Statistics() {
             On {formattedDate}
           </p>
           <p className="text-sm flex items-center justify-start gap-1 pb-1">
-            <div className="h-[20px] w-[4px] rounded-md bg-[#026fc7]"></div>
-            <div>
-              Recieved:{" "}
-              <span className="font-semibold">{`$${Money(payload[0].value)}`}</span>
-            </div>
-          </p>
-          <p className="text-sm flex items-center justify-start gap-1 pb-1">
             <div className="h-[20px] w-[4px] rounded-md bg-[#dff976]"></div>
             <div>
               Sent:{" "}
               <span className="font-semibold">{`$${Money(payload[1].value)}`}</span>
+            </div>
+          </p>
+          <p className="text-sm flex items-center justify-start gap-1 pb-1">
+            <div className="h-[20px] w-[4px] rounded-md bg-[#714dff]"></div>
+            <div>
+              Recieved:{" "}
+              <span className="font-semibold">{`$${Money(payload[0].value)}`}</span>
             </div>
           </p>
         </div>
@@ -135,7 +135,7 @@ function Statistics() {
           <Bar
             dataKey="out"
             stackId="a"
-            fill="#026fc7"
+            fill="#714dff"
             shape={<RoundedBar />}
           />
           <Bar dataKey="in" stackId="a" fill="#dff976" shape={<RoundedBar />} />

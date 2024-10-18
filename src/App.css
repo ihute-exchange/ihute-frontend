@@ -14,7 +14,8 @@ body {
 }
 
 :root {
-  --main-color: #026fc7;
+  /* --main-color: #026fc7; */
+  --main-color: #714dff;
   --light_body_second_bg: #fafafa;
   --light-body_main-bg: #fbfbfb;
   --light-card_gray-bg: #f0f0f0;

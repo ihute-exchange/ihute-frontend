@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        mainColor: "#026fc7",
+        mainColor: "#714dff",
         lightBodySecondBg: "#fafafa",
         lightBodyMainBg: "#fbfbfb",
         lightCardGrayBg: "#f0f0f0",
