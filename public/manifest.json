@@ -29,16 +29,28 @@
   "description": "Money Exchange with no limits",
   "shortcuts": [
     {
-      "name": "Wanna send some cash?",
+      "name": "Send",
       "short_name": "Send",
-      "description": "Send money today",
-      "url": "/",
-      "icons": [
-        {
-          "src": "/pwa-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
+      "description": "Send Money",
+      "url": "/"
+    },
+    {
+      "name": "Request",
+      "short_name": "Request",
+      "description": "Request Money",
+      "url": "/"
+    },
+    {
+      "name": "Contacts",
+      "short_name": "Contacts",
+      "description": "My contacts",
+      "url": "/contacts"
+    },
+    {
+      "name": "Wallet",
+      "short_name": "Wallet",
+      "description": "My Wallet",
+      "url": "/wallet"
     }
   ],
   "screenshots": [
