@@ -131,7 +131,7 @@ function AnalysisContent({
             </div>
 
             <div className="w-full h-fit flex items-start justify-start max-md:flex-col gap-5">
-              <div className="flex flex-col flex-1 max-lg:w-full">
+              <div className="flex flex-col flex-1 max-md:w-full">
                 {/* card header */}
                 <div className="flex items-center justify-between gap-3 pb-6">
                   <div className="flex flex-col">
@@ -151,7 +151,7 @@ function AnalysisContent({
                 </div>
                 <Statistics height={300} />
               </div>
-              <div className="w-[400px] min-w-[400px] max-md:w-full max-md:min-w-full h-full max-md:h-fit ring-1 ring-stone-100 p-4 rounded-2xl">
+              <div className="w-[30%] max-md:w-full max-md:min-w-full h-full max-md:h-fit ring-1 ring-stone-100 p-4 rounded-2xl">
                 {/* My Cards */}
                 <div className=" w-full h-full flex-1">
                   <div className="flex flex-col pb-2">
