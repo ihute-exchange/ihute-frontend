@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import DashboardContent from "../components/DashboardContent";
 import CardsContent from "../components/CardsContent";
+import { Helmet } from "react-helmet";
 
 function Cards() {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -20,6 +21,11 @@ function Cards() {
   };
   return (
     <div className="flex w-full h-svh bg-white gap-0 relative overflow-hidden">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Wallet</title>
+        <link rel="canonical" href="http://ihute.onrender.com/" />
+      </Helmet>
       <Sidebar closeSidebar={closeSidebar} />
       <CardsContent showSidebar={showSidebar} animateShowSidebar={animateShowSidebar} openSidebar={openSidebar} closeSidebar={closeSidebar} />
     </div>
