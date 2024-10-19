@@ -25,7 +25,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Avatar, Space } from "antd";
 import SidebarSectionTitle from "./SidebarSectionTitle";
 import { TbHeadset } from "react-icons/tb";
-import { IoCardOutline } from "react-icons/io5";
+import { IoCardOutline, IoStatsChart } from "react-icons/io5";
+import { HiOutlineChartBar } from "react-icons/hi";
 
 function Sidebar({ closeSidebar }) {
   const location = useLocation();
@@ -45,12 +46,12 @@ function Sidebar({ closeSidebar }) {
             </h1>
           </div>
         </Link>
-        <button className=" max-lg:hidden text-lightBlackText/50 hover:text-mainColor p-1 h-[40px] aspect-square flex items-center justify-center hover:bg-stone-100 rounded-xl">
+        <button className=" max-lg:hidden text-lightBlackText/80 hover:text-mainColor p-1 h-[40px] aspect-square flex items-center justify-center hover:bg-stone-100 rounded-xl">
           <LuQrCode className="text-xl" />
         </button>
         <button
           onClick={closeSidebar}
-          className="text-lightBlackText/50 hover:text-mainColor p-1 h-[40px] aspect-square items-center justify-center hidden max-lg:flex max-lg:bg-stone-100 hover:bg-stone-100 rounded-xl"
+          className="text-lightBlackText/80 hover:text-mainColor p-1 h-[40px] aspect-square items-center justify-center hidden max-lg:flex max-lg:bg-stone-100 hover:bg-stone-100 rounded-xl"
         >
           <LuX className="text-xl" />
         </button>
@@ -102,7 +103,7 @@ function Sidebar({ closeSidebar }) {
           <span className="text-xs">234</span>
         </Link>
         <Link
-          to="/"
+          to="/history"
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/history"
@@ -116,10 +117,10 @@ function Sidebar({ closeSidebar }) {
         </Link>
         <SidebarSectionTitle title={"updates"} />
         <Link
-          to="/"
+          to="/notifications"
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-between gap-2 group px-3 h-[35px] font-medium
           ${
-            location.pathname === "/history"
+            location.pathname === "/notifications"
               ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
@@ -134,17 +135,17 @@ function Sidebar({ closeSidebar }) {
           </span>
         </Link>
         <Link
-          to="/"
+          to="/analysis"
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
-            location.pathname === "/history"
+            location.pathname === "/analysis"
               ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
         >
-          <LuActivity className="text-xl max-lg:text-2xl" />
-          Statistics
+          <HiOutlineChartBar className="text-xl max-lg:text-2xl" />
+          Analysis
         </Link>
         <SidebarSectionTitle title={"Support"} />
         <Link
