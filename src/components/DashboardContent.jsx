@@ -33,12 +33,12 @@ function DashboardContent({
           }`}
         ></div>
       )}
-      <Header title={"Dashboard"} openSidebar={openSidebar} />
+      <Header openSidebar={openSidebar} />
       <div className="w-full flex-1 overflow-y-auto py-1 px-5 flex flex-col gap-5 pt-5">
-        <div className="text-sm text-lightBlackText/70 flex items-center gap-1">
+        {/* <div className="text-sm text-lightBlackText/70 flex items-center gap-1">
           <Link to="/">Dashboard</Link>
-          {/* <LuChevronRight className="text-mainColor" /> */}
-        </div>
+          <LuChevronRight className="text-mainColor" />
+        </div> */}
         <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5">
           {/* balance & contacts */}
           <div className="w-full flex flex-col gap-6">
@@ -144,7 +144,7 @@ function DashboardContent({
               {/* card content */}
               <div className=" rounded-xl flex items-center justify-between max-lg:flex-col gap-5">
                 <div className="max-lg:w-full flex-1 flex items-center justify-start gap-1 overflow-x-auto hidden_scrollbar p-[2px]">
-                  {Contacts.map((contact, index) => (
+                  {Contacts.sort((a, b) => a.name.localeCompare(b.name)).slice(0, 10).map((contact, index) => (
                     <Link
                       key={index}
                       to="/"

@@ -19,6 +19,11 @@ export default {
       fontFamily: {
         suse: ["SUSE", "sans-serif"]
       },
+      animation: {
+        Loader: "spin .5s linear infinite",
+        LoaderFast: "spin .4s linear infinite",
+        skeletonLoader: "pulse 1.5s linear infinite",
+      },
     },
   },
   plugins: [],

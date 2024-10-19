@@ -64,7 +64,7 @@ function Transactions() {
       </div>
       {/* table */}
 
-      <div className="w-full h-full overflow-x-auto overflow-y-hidden min-h-[400px] relative">
+      <div className="w-full h-full overflow-x-auto min-h-[400px] relative">
         <div
           className={`transition-all ${
             selectedTransactions.length !== 0
@@ -99,10 +99,10 @@ function Transactions() {
             </>
           )}{" "}
         </div>
-        <table className="w-full text-sm text-left table-auto">
+        <table className="w-full text-left">
           <thead className="text-xs text-lightBlackText/70 uppercase bg-stone-100 border-b border-t border-stone-200">
             <tr>
-              <th scope="col" className="truncate py-3 text-center w-[60px]">
+              <th scope="col" className="truncate py-3 text-center w-[100px]">
                 N<sup>o</sup>
               </th>
               <th scope="col" className="truncate py-3">
@@ -122,7 +122,7 @@ function Transactions() {
               </th>
               <th
                 scope="col"
-                className="truncate py-3 w-[120px] text-center max-md:pr-3"
+                className="truncate py-3 w-[120px] text-center px-4"
               >
                 Actions
               </th>
@@ -140,25 +140,25 @@ function Transactions() {
           }
         `}
               >
-                <td className="truncate py-2 max-lg:pr-5 px-2 text-center">
+                <td className="truncate py-2 px-4 text-center">
                   {index + 1}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5 text-left font-medium text-lightBlackText/80 tracking-tight flex items-center gap-2">
+                <td className="truncate py-2 pr-5 text-left font-medium text-lightBlackText/80 tracking-tight flex items-center gap-2">
                   {transaction.name}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5">
+                <td className="truncate py-2 pr-5">
                   {transaction.date}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5">
+                <td className="truncate py-2 pr-5">
                   {transaction.type}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5 text-text-color-black">
+                <td className="truncate py-2 pr-5 text-text-color-black">
                   ${Money(transaction.amount)}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5 capitalize">
+                <td className="truncate py-2 pr-5 capitalize">
                   {transaction.status}
                 </td>
-                <td className="truncate py-2 max-lg:pr-5 flex items-center justify-center">
+                <td className="truncate py-2 max-lg:pr-10 flex items-center justify-center">
                   <label className="flex items-center space-x-2 cursor-pointer">
                     <input
                       type="checkbox"

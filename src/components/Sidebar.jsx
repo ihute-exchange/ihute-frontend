@@ -36,16 +36,9 @@ function Sidebar({ closeSidebar }) {
           to="/"
           className={`w-fit max-sm:w-full text-base flex items-center justify-start gap-2 pl-2 pr-4 h-[40px] font-medium rounded-xl hover:bg-stone-200/50`}
         >
-          <Avatar
-            style={{
-              backgroundColor: "#026fc7",
-              color: "#fff",
-              fontWeight: "600",
-              fontSize: "16px",
-            }}
-          >
-            K
-          </Avatar>
+          <div className="h-[30px] text-lg aspect-square rounded-full flex items-center justify-center font-semibold bg-mainColor text-white">
+                          K
+                        </div>
           <div className="flex flex-col flex-1 truncate w-full">
             <h1 className="leading-4 text-sm relative font-medium text-lightBlackText/70 truncate w-full">
               Kevin Dermot
@@ -93,7 +86,7 @@ function Sidebar({ closeSidebar }) {
           Wallet
         </Link>
         <Link
-          to="/"
+          to="/contacts"
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-between gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/contacts"
@@ -184,8 +177,8 @@ function Sidebar({ closeSidebar }) {
       {/* bottom link */}
       <div className="flex flex-col p-2">
         <button className="h-[35px] px-4 rounded-xl flex items-center justify-center gap-1 bg-mainColor text-white text-sm font-semibold">
-          Create Contact
-          <LuPlus className="text-lg" />
+        <LuPlus className="text-lg" />
+          Add Contact
         </button>
       </div>
     </div>

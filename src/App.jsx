@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Cards from "./pages/Cards";
+import Contacts from "./pages/Contacts";
 
 function App() {
   return <>
@@ -10,6 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Dashboard />} />
       <Route path="/wallet" element={<Cards />} />
+      <Route path="/contacts" element={<Contacts />} />
     </Routes>
   </HashRouter>
   </>;

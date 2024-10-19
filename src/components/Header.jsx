@@ -21,6 +21,9 @@ function Header({ title, openSidebar }) {
         <button onClick={openSidebar} className="text-3xl p-1 rounded-md hidden max-lg:flex text-lightBlackText/60">
           <HiMenuAlt2 />
         </button>
+        {title ? (
+          <h1 className="text-xl max-lg:text-2xl font-medium text-lightBlackText/80 max-sm:hidden">{title}</h1>
+        ) : (
         <div className="flex flex-col max-sm:hidden">
           <h1 className="text-sm font-medium tracking-tight text-lightBlackText/80">
             Good Morning, Kevin!
@@ -30,6 +33,7 @@ function Header({ title, openSidebar }) {
             notifications
           </h1>
         </div>
+      )}
         <img src={IhuteLogo} className="hidden max-sm:flex h-7" />
       </div>
       <div className="flex items-center justify-end gap-1">

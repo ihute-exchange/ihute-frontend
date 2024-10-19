@@ -44,69 +44,15 @@ function CardsContent({
           }`}
         ></div>
       )}
-      <Header title={"Dashboard"} openSidebar={openSidebar} />
-      <div className="w-full flex-1 overflow-y-auto pl-5 max-lg:pl-0 flex flex-row-reverse max-lg:flex-col gap-5">
-        {/* card swiper */}
-        <div className="w-[370px] max-lg:w-full h-full max-lg:h-fit flex flex-col border-l max-lg:border-none border-stone-100 sticky top-0 max-lg:relative ">
-          <div className="flex flex-col pt-4 px-4">
-            <h1 className="text-lg font-medium text-lightBlackText/80">
-              My Cards
-            </h1>
-          </div>
-          <div className="w-full h-fit flex flex-col gap-2">
-            <Swiper
-              loop={false}
-              grabCursor={true}
-              slidesPerView={1.1}
-              spaceBetween={0}
-              className="mySwiper"
-            >
-              {MyCards.map((_, index) => (
-                <SwiperSlide className="py-4 pl-4 w-full">
-                  <Card />
-                </SwiperSlide>
-              ))}
-              <SwiperSlide className="py-4 px-4 h-[200px] w-full">
-                <div className="w-full h-full transition hover:border-mainColor text-lightBlackText/50 hover:text-mainColor px-5 py-6 rounded-3xl border-2 border-dashed border-stone-200 flex items-center justify-center gap-1 active:scale-95 font-medium ">
-                  <LuPlus className="text-2xl" />
-                  New Card
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-          <div className=" w-full flex-1 px-4">
-            <div className="flex flex-col py-2">
-              <h1 className="text-lg font-medium text-lightBlackText/80">
-                Quick Actions
-              </h1>
-            </div>
-            <div className="grid grid-cols-2 max-md:grid-cols-1 gap-2 pt-2 select-none">
-              <button className="h-[40px] w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
-                <LuPlusCircle className="text-lg " />
-                Top Up
-              </button>
-              <button className="h-[40px] w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
-                <LuUpload />
-                Withdraw
-              </button>
-              <button className="h-[40px] w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
-                <LuArrowUpRightFromCircle />
-                Send
-              </button>
-              <button className="h-[40px] w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
-                <LuArrowDownLeftFromCircle />
-                Request
-              </button>
-            </div>
-          </div>
-        </div>
+      <Header title={"Wallet"} openSidebar={openSidebar} />
+      <div className="w-full flex-1 overflow-y-auto pl-5 max-lg:pl-0 grid grid-cols-3 max-lg:flex max-lg:flex-col gap-5 max-lg:gap-0 relative">
         {/* mini info */}
-        <div className="w-full flex-1 flex items-start justify-start gap-5 max-lg:px-5">
-          <div className="w-full flex-1 py-5 max-lg:pt-0 flex flex-col gap-5">
-            <div className="text-sm text-lightBlackText/70 flex items-center gap-1">
+        <div className="w-full col-span-2 flex items-start justify-start gap-5 max-lg:px-5">
+          <div className="w-full flex-1 py-5 max-lg:pb-0 flex flex-col gap-5">
+            {/* <div className="text-sm text-lightBlackText/70 flex items-center gap-1">
               <Link to="/cards">Wallet Status</Link>
-              {/* <LuChevronRight className="text-mainColor" /> */}
-            </div>
+              <LuChevronRight className="text-mainColor" />
+            </div> */}
             <div className="grid grid-cols-3 max-xl:grid-cols-2 gap-5">
               {/* single card */}
               <div className="w-full flex flex-col items-start justify-start gap-3 ring-1 ring-stone-100 rounded-2xl p-4">
@@ -159,6 +105,60 @@ function CardsContent({
             </div>
             <div className="w-full">
               <Transactions />
+            </div>
+          </div>
+        </div>
+        {/* card swiper */}
+        <div className="w-full max-lg:w-full h-full max-lg:h-fit flex flex-col border-l max-lg:border-none border-stone-100 sticky top-0 max-lg:relative max-lg:pb-5">
+          <div className="flex flex-col pt-4 max-lg:pt-0 px-4">
+            <h1 className="text-lg font-medium text-lightBlackText/80">
+              My Cards
+            </h1>
+          </div>
+          <div className="w-full h-fit flex flex-col gap-2">
+            <Swiper
+              loop={false}
+              grabCursor={true}
+              slidesPerView={1.1}
+              spaceBetween={0}
+              className="mySwiper"
+            >
+              {MyCards.map((_, index) => (
+                <SwiperSlide className="py-4 pl-4 w-full">
+                  <Card />
+                </SwiperSlide>
+              ))}
+              <SwiperSlide className="py-4 px-4 h-[200px] w-full">
+                <div className="w-full h-full transition hover:border-mainColor text-lightBlackText/50 hover:text-mainColor px-5 py-6 rounded-3xl border-2 border-dashed border-stone-200 flex items-center justify-center gap-1 active:scale-95 font-medium ">
+                  <LuPlus className="text-2xl" />
+                  New Card
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <div className=" w-full flex-1 px-4">
+            <div className="flex flex-col py-2">
+              <h1 className="text-lg font-medium text-lightBlackText/80">
+                Quick Actions
+              </h1>
+            </div>
+            <div className="grid grid-cols-2 max-xl:grid-cols-1 gap-2 pt-2 select-none">
+              <button className="h-[40px] w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
+                <LuPlusCircle className="text-lg " />
+                Top Up
+              </button>
+              <button className="h-[40px] w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
+                <LuUpload />
+                Withdraw
+              </button>
+              <button className="h-[40px] w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
+                <LuArrowUpRightFromCircle />
+                Send
+              </button>
+              <button className="h-[40px] w-full flex items-center justify-center gap-2 px-4 ring-1 ring-stone-200 hover:bg-stone-100 rounded-xl hover:ring-stone-100 hover:text-mainColor">
+                <LuArrowDownLeftFromCircle />
+                Request
+              </button>
             </div>
           </div>
         </div>
