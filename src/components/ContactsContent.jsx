@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import Card from "./Card";
@@ -31,7 +31,12 @@ function ContactsContent({
   openSidebar,
   closeSidebar,
 }) {
-  const MyCards = ["", ""];
+  const [fetching, setFetching] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setFetching(false);
+    }, 1000);
+  }, []);
   return (
     <div
       className={`${
@@ -49,11 +54,13 @@ function ContactsContent({
       <Header title={"Contacts"} openSidebar={openSidebar} />
       <div className="w-full flex-1 overflow-y-auto p-5 relative">
         {/* loader */}
-        {/* <LoadingScreen /> */}
-        {/* mini info */}
-        <div className="w-full flex-1 flex items-start justify-start">
-          <ContactsTable />
-        </div>
+        {fetching ? (
+          <LoadingScreen />
+        ) : (
+          <div className="w-full flex-1 flex items-start justify-start">
+            <ContactsTable />
+          </div>
+        )}
       </div>
     </div>
   );
