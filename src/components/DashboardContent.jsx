@@ -223,15 +223,6 @@ function DashboardContent({
                         04/24
                       </h1>
                     </div>
-                    {/* cvc */}
-                    <div className="flex flex-col w-full min-w-[100px] items-center justify-center ">
-                      <h1 className="text-sm font-medium text-lightBlackText/60">
-                        CVC
-                      </h1>
-                      <h1 className="text-sm font-medium text-lightBlackText/80">
-                        ***
-                      </h1>
-                    </div>
                     {/* status */}
                     <div className="flex flex-col w-full min-w-[100px] items-center justify-center ">
                       <h1 className="text-sm font-medium text-lightBlackText/60">

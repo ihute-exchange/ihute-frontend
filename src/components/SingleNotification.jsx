@@ -11,7 +11,7 @@ function SingleNotification() {
           K
         </div>
         <div className="w-fit flex-1 flex flex-col">
-          <h1 className="text-sm font-semibold text-lightBlackText/90 flex items-center justify-start gap-1">
+          <h1 className="text-base font-medium text-lightBlackText/80 flex items-center justify-start gap-1">
             <span>You have received $300</span>
             <span className="text-lightBlackText/60 text-xs">2h ago</span>
           </h1>

@@ -10,7 +10,8 @@ function MyNotifications() {
   return (
     <div className="w-full h-full flex-1 flex flex-col gap-3">
       <div className="w-full h-full flex-1 flex items-start justify-start relative p-5 gap-5 overflow-y-auto">
-        <div className="flex w-full h-fit flex-col gap-3 flex-1">
+        {/* wrapper */}
+        <div className="flex w-full h-fit flex-col gap-0 flex-1">
           <div className="w-full flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:gap-5">
             <h1 className="text-sm font-medium text-lightBlackText/60">
               You have <span className="text-mainColor">23 unread</span>{" "}

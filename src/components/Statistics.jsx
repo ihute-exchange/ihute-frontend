@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import Money from "../utils/Money";
 
-function Statistics() {
+function Statistics({height}) {
   const customValues = [
     { in: 1240.20, out: 1200 }, // For today
     { in: 2430, out: 1024.42 }, // For yesterday
@@ -101,7 +101,7 @@ function Statistics() {
 
   return (
     <div className="w-full h-fit">
-      <ResponsiveContainer width="100%" height={185}>
+      <ResponsiveContainer width="100%" height={height ? height : 185}>
         <BarChart
           data={income}
           margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
