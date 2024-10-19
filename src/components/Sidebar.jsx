@@ -31,7 +31,7 @@ import { HiOutlineChartBar } from "react-icons/hi";
 function Sidebar({ closeSidebar }) {
   const location = useLocation();
   return (
-    <div className="w-[255px] min-w-[255px] max-sm:w-full z-10 h-svh sticky top-0 left-0 max-lg:fixed flex flex-col bg-white text-lightBlackText border-r border-stone-100  overflow-y-auto">
+    <div className="w-[255px] min-w-[255px] max-sm:w-full z-10 h-svh sticky top-0 left-0 max-lg:fixed flex flex-col bg-lightSidebarBg text-lightBlackText border-r border-stone-100  overflow-y-auto">
       <div className="flex items-center justify-between px-2 pt-2 gap-1 select-none">
         <Link
           to="/"
@@ -64,13 +64,13 @@ function Sidebar({ closeSidebar }) {
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/"
-              ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
+              ? "active_sidebar_link bg-stone-200/50 text-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
         >
           <LuPieChart className="text-xl max-lg:text-2xl" />
-          Dashboard
+          <p className="text-lightBlackText/70">Dashboard</p>
         </Link>
         <SidebarSectionTitle title={"Management"} />
         <Link
@@ -78,27 +78,27 @@ function Sidebar({ closeSidebar }) {
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/wallet"
-              ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
+              ? "active_sidebar_link bg-stone-200/50 text-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
         >
           <LuWallet className="text-xl max-lg:text-2xl" />
-          Wallet
+          <p className="text-lightBlackText/70">Wallet</p>
         </Link>
         <Link
           to="/contacts"
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-between gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/contacts"
-              ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
+              ? "active_sidebar_link bg-stone-200/50 text-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
         >
           <span className="flex items-center gap-2">
             <LuUsers2 className="text-xl max-lg:text-2xl" />
-            Contacts
+            <p className="text-lightBlackText/70">Contacts</p>
           </span>
           <span className="text-xs">234</span>
         </Link>
@@ -107,13 +107,13 @@ function Sidebar({ closeSidebar }) {
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/history"
-              ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
+              ? "active_sidebar_link bg-stone-200/50 text-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
         >
           <LuHistory className="text-xl max-lg:text-2xl" />
-          History
+          <p className="text-lightBlackText/70">History</p>
         </Link>
         <SidebarSectionTitle title={"updates"} />
         <Link
@@ -121,14 +121,14 @@ function Sidebar({ closeSidebar }) {
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-between gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/notifications"
-              ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
+              ? "active_sidebar_link bg-stone-200/50 text-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
         >
           <span className="flex items-center gap-2">
             <LuBell className="text-xl max-lg:text-2xl" />
-            Notifications
+            <p className="text-lightBlackText/70">Notifications</p>
           </span>
           <span className="bg-mainColor/10 text-mainColor text-[12px] font-bold h-[24px] flex items-center justify-center aspect-square rounded-full">
             0
@@ -139,7 +139,7 @@ function Sidebar({ closeSidebar }) {
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/analysis"
-              ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
+              ? "active_sidebar_link bg-stone-200/50 text-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
@@ -153,7 +153,7 @@ function Sidebar({ closeSidebar }) {
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/settings"
-              ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
+              ? "active_sidebar_link bg-stone-200/50 text-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}
@@ -166,7 +166,7 @@ function Sidebar({ closeSidebar }) {
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/help-center"
-              ? "active_sidebar_link bg-stone-100 text-mainColor border-mainColor"
+              ? "active_sidebar_link bg-stone-200/50 text-mainColor"
               : "text-lightBlackText/70 hover:bg-stone-100"
           }
           `}

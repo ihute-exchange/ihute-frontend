@@ -24,8 +24,9 @@ import { BsPiggyBank } from "react-icons/bs";
 import Transactions from "./Transactions";
 import LoadingScreen from "./LoadingScreen";
 import ContactsTable from "./ContactsTable";
+import MyNotifications from "./MyNotifications";
 
-function HistoryContent({
+function NotificationsContent({
   showSidebar,
   animateShowSidebar,
   openSidebar,
@@ -51,19 +52,13 @@ function HistoryContent({
           }`}
         ></div>
       )}
-      <Header title={"History"} openSidebar={openSidebar} />
-      <div className="w-full flex-1 overflow-y-auto p-5 relative">
+      <Header title={"Notifications"} openSidebar={openSidebar} />
+      <div className="w-full flex-1 overflow-y-auto relative">
         {/* loader */}
-        {fetching ? (
-          <LoadingScreen />
-        ) : (
-          <div className="w-full flex-1 flex items-start justify-start">
-            <Transactions />
-          </div>
-        )}
+        {fetching ? <LoadingScreen /> : <MyNotifications />}
       </div>
     </div>
   );
 }
 
-export default HistoryContent;
+export default NotificationsContent;

@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Cards from "./pages/Cards";
 import Contacts from "./pages/Contacts";
 import History from "./pages/History";
+import Notifications from './pages/Notifications'
 
 function App() {
   return <>
@@ -14,6 +15,7 @@ function App() {
       <Route path="/wallet" element={<Cards />} />
       <Route path="/contacts" element={<Contacts />} />
       <Route path="/history" element={<History />} />
+      <Route path="/notifications" element={<Notifications />} />
     </Routes>
   </HashRouter>
   </>;
