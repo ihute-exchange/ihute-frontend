@@ -1,0 +1,85 @@
+{
+  "name": "Ihute",
+  "short_name": "Ihute",
+  "icons": [
+  {
+    "src": "./maskable_icon.png",
+    "sizes": "196x196",
+    "type": "image/png",
+    "purpose": "maskable"
+  },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./pwa-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "description": "Money Exchange with no limits",
+  "shortcuts": [
+    {
+      "name": "Wanna send some cash?",
+      "short_name": "Send",
+      "description": "Send money today",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./screenshot1.png",
+      "type": "image/png",
+      "sizes": "1080x2340"
+    },
+    {
+      "src": "./screenshot2.png",
+      "type": "image/png",
+      "sizes": "1080x2340"
+    },
+    {
+      "src": "./screenshot3.png",
+      "type": "image/png",
+      "sizes": "1080x2340"
+    },
+    {
+      "src": "./desktopScreen1.png",
+      "type": "image/png",
+      "sizes": "1920x1080",
+      "form_factor": "wide"
+    },
+    {
+      "src": "./desktopScreen2.png",
+      "type": "image/png",
+      "sizes": "1920x1080",
+      "form_factor": "wide"
+    }
+  ]
+}
