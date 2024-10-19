@@ -131,7 +131,7 @@ function AnalysisContent({
             </div>
 
             <div className="w-full h-fit flex items-start justify-start max-md:flex-col gap-5">
-              <div className="flex flex-col flex-1 w-full">
+              <div className="flex flex-col flex-1 max-lg:w-full">
                 {/* card header */}
                 <div className="flex items-center justify-between gap-3 pb-6">
                   <div className="flex flex-col">
