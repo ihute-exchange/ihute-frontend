@@ -46,7 +46,7 @@ function DashboardContent({
           <LoadingScreen />
         ) : (
           <>
-            <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-5">
+            <div className="grid grid-cols-2 max-md:grid-cols-1 gap-5">
               {/* balance & contacts */}
               <div className="w-full flex flex-col gap-6">
                 {/* balance */}
