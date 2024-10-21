@@ -2,12 +2,12 @@
   "name": "Ihute",
   "short_name": "Ihute",
   "icons": [
-  {
-    "src": "./maskable_icon.png",
-    "sizes": "196x196",
-    "type": "image/png",
-    "purpose": "maskable"
-  },
+    {
+      "src": "./maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
     {
       "src": "/pwa-192x192.png",
       "sizes": "192x192",
@@ -23,7 +23,7 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "orientation": "any",
+  "orientation": "portrait",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "description": "Money Exchange with no limits",
