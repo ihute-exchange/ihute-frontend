@@ -41,12 +41,12 @@ function DashboardContent({
         ></div>
       )}
       <Header openSidebar={openSidebar} />
-      <div className="w-full flex-1 overflow-y-auto py-1 px-5 flex flex-col gap-5 pt-5 relative">
+      <div className="w-full flex-1 overflow-y-auto py-1 flex flex-col gap-0 pt-5 relative">
         {fetching ? (
           <LoadingScreen />
         ) : (
           <>
-            <div className="grid grid-cols-2 max-md:grid-cols-1 gap-5">
+            <div className="grid grid-cols-2 max-md:grid-cols-1 px-5 gap-5 pb-5 border-b border-stone-100">
               {/* balance & contacts */}
               <div className="w-full flex flex-col gap-6">
                 {/* balance */}

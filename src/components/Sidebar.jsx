@@ -149,7 +149,7 @@ function Sidebar({ closeSidebar }) {
         </Link>
         <SidebarSectionTitle title={"Support"} />
         <Link
-          to="/"
+          to="/settings"
           className={`rounded-xl text-sm relative flex items-center border-transparent justify-start gap-2 group px-3 h-[35px] font-medium
           ${
             location.pathname === "/settings"

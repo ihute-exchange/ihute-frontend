@@ -7,6 +7,7 @@ import Contacts from "./pages/Contacts";
 import History from "./pages/History";
 import Notifications from './pages/Notifications'
 import Analysis from './pages/Analysis'
+import Settings from "./pages/Settings";
 
 function App() {
   return <>
@@ -18,6 +19,7 @@ function App() {
       <Route path="/history" element={<History />} />
       <Route path="/notifications" element={<Notifications />} />
       <Route path="/analysis" element={<Analysis />} />
+      <Route path="/settings" element={<Settings />} />
     </Routes>
   </HashRouter>
   </>;

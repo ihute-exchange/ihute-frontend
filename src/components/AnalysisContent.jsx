@@ -54,12 +54,12 @@ function AnalysisContent({
         ></div>
       )}
       <Header title={"Analysis"} openSidebar={openSidebar} />
-      <div className="w-full flex-1 overflow-y-auto p-5 relative">
+      <div className="w-full flex-1 overflow-y-auto relative">
         {fetching ? (
           <LoadingScreen />
         ) : (
           <div className="w-full h-full">
-            <div className="w-full col-span-2 flex items-start justify-start gap-5">
+            <div className="w-full col-span-2 px-5 flex items-start justify-start gap-5">
               <div className="w-full flex-1 py-5 max-lg:pt-0 flex flex-col gap-5">
                 <div className="grid grid-cols-4 max-xl:grid-cols-2 gap-5">
                   {/* single card */}
@@ -130,7 +130,7 @@ function AnalysisContent({
               </div>
             </div>
 
-            <div className="w-full h-fit flex items-start justify-start max-md:flex-col gap-5">
+            <div className="w-full h-fit px-5 flex items-start justify-start max-md:flex-col gap-5">
               <div className="flex flex-col flex-1 max-md:w-full">
                 {/* card header */}
                 <div className="flex items-center justify-between gap-3 pb-6">
@@ -216,7 +216,7 @@ function AnalysisContent({
               </div>
             </div>
 
-            <div className="w-full h-fit py-5">
+            <div className="w-full h-fit pb-5 mt-3 border-t border-stone-100">
               <Transactions />
             </div>
           </div>

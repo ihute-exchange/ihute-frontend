@@ -52,19 +52,19 @@ function CardsContent({
         ></div>
       )}
       <Header title={"Wallet"} openSidebar={openSidebar} />
-      <div className="w-full flex-1 overflow-y-auto pl-5 max-lg:pl-0 grid grid-cols-3 max-lg:flex max-lg:flex-col gap-5 max-lg:gap-0 relative">
+      <div className="w-full flex-1 overflow-y-auto pl-0 max-lg:pl-0 grid grid-cols-3 max-lg:flex max-lg:flex-col gap-0 max-lg:gap-0 relative">
         {fetching ? (
           <LoadingScreen />
         ) : (
           <>
             {/* mini info */}
-            <div className="w-full col-span-2 flex items-start justify-start gap-5 max-lg:px-5">
-              <div className="w-full flex-1 py-5 max-lg:pb-0 flex flex-col gap-5">
+            <div className="w-full col-span-2 flex items-start justify-start gap-5">
+              <div className="w-full flex-1 max-lg:pb-0 flex flex-col gap-5">
                 {/* <div className="text-sm text-lightBlackText/70 flex items-center gap-1">
               <Link to="/cards">Wallet Status</Link>
               <LuChevronRight className="text-mainColor" />
             </div> */}
-                <div className="grid grid-cols-3 max-xl:grid-cols-2 gap-5">
+                <div className="grid grid-cols-3 max-xl:grid-cols-2 gap-5 px-5 pt-5">
                   {/* single card */}
                   <div className="w-full flex flex-col items-start justify-start gap-3 ring-1 ring-stone-100 rounded-2xl p-4">
                     <div className="flex items-center justify-center gap-2">
@@ -114,7 +114,7 @@ function CardsContent({
                     </div>
                   </div>
                 </div>
-                <div className="w-full">
+                <div className="w-full border-t border-t-stone-100">
                   <Transactions />
                 </div>
               </div>

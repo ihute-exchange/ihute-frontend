@@ -52,7 +52,7 @@ function ContactsContent({
         ></div>
       )}
       <Header title={"Contacts"} openSidebar={openSidebar} />
-      <div className="w-full flex-1 overflow-y-auto p-5 relative">
+      <div className="w-full flex-1 overflow-y-auto p-0 relative">
         {/* loader */}
         {fetching ? (
           <LoadingScreen />

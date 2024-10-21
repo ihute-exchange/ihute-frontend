@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { LuChevronRight, LuMoreHorizontal } from "react-icons/lu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Contacts from "../utils/Contacts";
 import { FormatPID } from "../utils/FormatPID";
 
@@ -8,6 +8,7 @@ function ContactsTable() {
   const [contactsSearch, setContactsSearch] = useState("");
   const [filteredContacts, setFilteredContacts] = useState([]);
   const [selectedContacts, setSelectedContacts] = useState([]);
+  const navigate = useNavigate()
   const handleSearch = () => {
     const searchTerm = contactsSearch.toLowerCase();
     const filtered = Contacts.filter(
@@ -31,8 +32,12 @@ function ContactsTable() {
       }
     });
   };
+
+  const handleShowContact = () => {
+    navigate('/')
+  }
   return (
-    <div className="w-full ring-1 ring-stone-100 rounded-2xl flex flex-col overflow-hidden relative">
+    <div className="w-full flex flex-col overflow-hidden relative">
       {/* card header */}
       <div className="flex items-center justify-between p-5 flex-wrap max-md:items-start gap-4">
         <div className="flex flex-col gap-1">
@@ -112,49 +117,51 @@ function ContactsTable() {
             </tr>
           </thead>
           <tbody>
-            {filteredContacts.sort((a, b) => a.name.localeCompare(b.name)).map((contact, index) => (
-              <tr
-                key={index}
-                className={`text-base whitespace-nowrap border-b border-stone-200 text-lightBlackText/80 
-          ${
-            selectedContacts.includes(contact.name)
-              ? "bg-mainColor/5 "
-              : "bg-transparent "
-          }
-        `}
-              >
-                <td className="truncate py-2 px-2 text-center">
-                  <label className="flex items-center whitespace-nowrap justify-center cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="hidden peer"
-                      checked={selectedContacts.includes(contact.name)}
-                      onChange={() => handleCheckboxChange(contact.name)}
-                    />
-                    <div className="w-4 h-4 border-2 border-stone-300/80 rounded-md peer-checked:border-mainColor/80 peer-checked:bg-mainColor/40 transition-all duration-300"></div>
-                  </label>
-                </td>
-                <td className="truncate py-2 pr-5 text-left font-medium text-lightBlackText/80 tracking-tight flex items-center gap-2">
-                  <div className="h-[30px] min-w-fit aspect-square rounded-full overflow-hidden">
-                    {contact.pfp ? (
-                      <img
-                        src={contact.pfp}
-                        className="h-fit min-h-full w-full object-cover"
+            {filteredContacts
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((contact, index) => (
+                <tr
+                  key={index}
+                  className={`text-base whitespace-nowrap text-lightBlackText/80 hover:bg-stone-100 cursor-pointer ${
+                    selectedContacts.includes(contact.name)
+                      ? "bg-mainColor/5 "
+                      : "bg-transparent "
+                  }`}
+                >
+                  <td className="truncate py-2 px-2 text-center">
+                    <label className="flex items-center whitespace-nowrap justify-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="hidden peer"
+                        checked={selectedContacts.includes(contact.name)}
+                        onChange={() => handleCheckboxChange(contact.name)}
                       />
-                    ) : (
-                      <div className="h-full text-lg aspect-square rounded-full flex items-center justify-center font-semibold bg-mainColor text-white">
+                      <div className="w-4 h-4 border-2 border-stone-300/80 rounded-md peer-checked:border-mainColor/80 peer-checked:bg-mainColor/40 transition-all duration-300"></div>
+                    </label>
+                  </td>
+                  <td onClick={handleShowContact} className="truncate py-2 pr-5 text-left font-medium text-lightBlackText/80 tracking-tight flex items-center gap-2">
+                    <div className="h-[30px] min-w-fit aspect-square rounded-full overflow-hidden">
+                      {contact.pfp ? (
+                        <img
+                          src={contact.pfp}
+                          className="h-fit min-h-full w-full object-cover"
+                        />
+                      ) : (
+                        <div className="h-full text-lg aspect-square rounded-full flex items-center justify-center font-semibold bg-mainColor text-white">
                           {contact.name.charAt(0)}
                         </div>
-                    )}
-                  </div>
-                  {contact.name}
-                </td>
-                <td className="truncate py-2 pr-5 text-text-color-black">
-                  {contact.email}
-                </td>
-                <td className="truncate py-2 pr-5 capitalize">{FormatPID(contact.pid)}</td>
-              </tr>
-            ))}
+                      )}
+                    </div>
+                    {contact.name}
+                  </td>
+                  <td onClick={handleShowContact} className="truncate py-2 pr-5 text-text-color-black">
+                    {contact.email}
+                  </td>
+                  <td onClick={handleShowContact} className="truncate py-2 pr-5 capitalize">
+                    {FormatPID(contact.pid)}
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>

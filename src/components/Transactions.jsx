@@ -32,7 +32,7 @@ function Transactions() {
     });
   };
   return (
-    <div className="w-full ring-1 ring-stone-100 rounded-2xl flex flex-col mb-5 overflow-hidden relative">
+    <div className="w-full flex flex-col mb-5 overflow-hidden relative">
       {/* card header */}
       <div className="flex items-center justify-between p-5 flex-wrap max-md:items-start gap-4">
         <div className="flex flex-col">

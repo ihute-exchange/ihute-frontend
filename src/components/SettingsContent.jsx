@@ -23,15 +23,22 @@ import Money from "../utils/Money";
 import { BsPiggyBank } from "react-icons/bs";
 import Transactions from "./Transactions";
 import LoadingScreen from "./LoadingScreen";
-import ContactsTable from "./ContactsTable";
+import BasicInfo from "./BasicInfo";
 
-function HistoryContent({
+function SettingsContent({
   showSidebar,
   animateShowSidebar,
   openSidebar,
   closeSidebar,
 }) {
   const [fetching, setFetching] = useState(true);
+  const [activeTab, setActiveTab] = useState("Basic info");
+  const tabs = [
+    { title: "Basic info", element: <BasicInfo /> },
+    { title: "Security", element: <BasicInfo /> },
+    { title: "Appearance", element: <BasicInfo /> },
+    { title: "Currencies", element: <BasicInfo /> },
+  ];
   useEffect(() => {
     setTimeout(() => {
       setFetching(false);
@@ -51,14 +58,33 @@ function HistoryContent({
           }`}
         ></div>
       )}
-      <Header title={"History"} openSidebar={openSidebar} />
+      <Header title={"Settings"} openSidebar={openSidebar} />
       <div className="w-full flex-1 overflow-y-auto p-0 relative">
         {/* loader */}
         {fetching ? (
           <LoadingScreen />
         ) : (
-          <div className="w-full flex-1 flex items-start justify-start">
-            <Transactions />
+          <div className="w-full h-full flex flex-col">
+            {/* tabs */}
+            <div className="h-[45px] w-full overflow-x-auto border-b px-5 border-stone-100 flex flex-row gap-0">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className={`w-fit h-full whitespace-nowrap px-3 text-sm font-medium transition duration-200 ${
+                    activeTab === tab.title
+                      ? "border-b-2 border-mainColor/80 text-lightBlackText/80"
+                      : "border-b-0 border-transparent text-lightBlackText/50"
+                  }`}
+                  onClick={() => setActiveTab(tab.title)}
+                >
+                  {tab.title}
+                </button>
+              ))}
+            </div>
+            {/* tab contents */}
+            <div className="w-full h-fit flex-1 overflow-y-auto">
+              {tabs.find((tab) => tab.title === activeTab)?.element}
+            </div>
           </div>
         )}
       </div>
@@ -66,4 +92,4 @@ function HistoryContent({
   );
 }
 
-export default HistoryContent;
+export default SettingsContent;
