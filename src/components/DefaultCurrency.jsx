@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 function DefaultCurrency() {
   return (
-    <div className="p-8 w-full h-fit flex flex-col gap-5 text-lightBlackText/80">
-      <form className="w-full flex flex-col gap-4 max-w-[300px]">
+    <div className="p-8 max-md:p-5 w-full h-fit flex flex-col gap-5 text-lightBlackText/80">
+      <form className="w-full flex flex-col gap-4 max-w-[300px] max-md:max-w-full">
         {/* section title */}
         <h1 className="text-lg ">Default Currency</h1>
         <div className="w-full flex flex-col gap-1">

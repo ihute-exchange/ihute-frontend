@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function BasicInfo() {
   return (
-    <div className="p-8 w-full h-fit flex flex-col gap-5">
+    <div className="p-8 max-md:p-5 w-full h-fit flex flex-col gap-5">
       {/* section title */}
       <h1 className="text-lg ">Account</h1>
       {/* profile */}
@@ -25,7 +25,7 @@ function BasicInfo() {
           </Link>
         </div>
       </div>
-      <form className="w-full flex flex-col gap-4 mt-2 max-w-[300px]">
+      <form className="w-full flex flex-col gap-4 mt-2 max-w-[300px] max-md:max-w-full">
         <div className="w-full flex flex-col gap-1">
           <h1 className="text-sm font-normal">Username</h1>
           <input

@@ -69,7 +69,7 @@ function SettingsContent({
         ) : (
           <div className="w-full h-full flex flex-col">
             {/* tabs */}
-            <div className="h-[45px] w-full overflow-x-auto border-b px-5 border-stone-100 flex flex-row gap-0">
+            <div className="h-[45px] max-md:h-[55px] hidden_scrollbar w-full overflow-x-auto border-b px-5 border-stone-100 flex flex-row gap-0">
               {tabs.map((tab, index) => (
                 <button
                   key={index}

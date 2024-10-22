@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function Security() {
   return (
-    <div className="p-8 w-full h-fit flex flex-col gap-5 text-lightBlackText/80">
-      <form className="w-full flex flex-col gap-4 max-w-[300px]">
+    <div className="p-8 max-md:p-5 w-full h-fit flex flex-col gap-5 text-lightBlackText/80">
+      <form className="w-full flex flex-col gap-4 max-w-[300px] max-md:max-w-full">
         {/* section title */}
         <h1 className="text-lg ">Change Password</h1>
         <div className="w-full flex flex-col gap-1">
@@ -32,7 +32,7 @@ function Security() {
         </button>
       </form>
 
-      <form className="w-full flex flex-col gap-4 max-w-[500px] mt-5">
+      <form className="w-full flex flex-col gap-4 max-w-[500px] mt-5 max-md:max-w-full">
         {/* section title */}
         <div className="flex flex-col">
           <h1 className="text-lg ">Delete Account</h1>
@@ -41,7 +41,7 @@ function Security() {
             and will be permanently deleted automatically after 30 days.{" "}
           </h1>
         </div>
-        <div className="w-full flex flex-col gap-1 max-w-[300px]">
+        <div className="w-full flex flex-col gap-1 max-w-[300px] max-md:max-w-full">
           <h1 className="text-sm font-normal">Confirm Password</h1>
           <input
             type="password"
