@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 function BasicInfo() {
   return (
     <div className="p-8 w-full h-fit flex flex-col gap-5">
+      {/* section title */}
+      <h1 className="text-lg ">Account</h1>
       {/* profile */}
       <div className="w-fit flex items-center gap-3 text-lightBlackText/80">
         <div className="h-[55px] aspect-square rounded-full overflow-hidden">
@@ -42,7 +44,25 @@ function BasicInfo() {
             className="ring-1 ring-stone-200 rounded-xl h-[35px] px-4 max-md:w-full text-sm placeholder:text-lightBlackText/30"
           />
         </div>
-        <button className="h-[35px] mt-1 px-4 w-fit rounded-xl flex items-center justify-center gap-1 bg-mainColor text-white text-sm font-medium">
+        <div className="w-full flex flex-col gap-1">
+          <h1 className="text-sm font-normal">Country</h1>
+          <input
+            type="text"
+            name="country"
+            placeholder="Country"
+            className="ring-1 ring-stone-200 rounded-xl h-[35px] px-4 max-md:w-full text-sm placeholder:text-lightBlackText/30"
+          />
+        </div>
+        <div className="w-full flex flex-col gap-1">
+          <h1 className="text-sm font-normal">Phone number</h1>
+          <input
+            type="text"
+            name="phone"
+            placeholder="phone number"
+            className="ring-1 ring-stone-200 rounded-xl h-[35px] px-4 max-md:w-full text-sm placeholder:text-lightBlackText/30"
+          />
+        </div>
+        <button className="h-[35px] mt-1 px-4 w-fit max-md:w-full rounded-xl flex items-center justify-center gap-1 bg-mainColor text-white text-sm font-medium">
         <LuCheck className="text-lg" />
           Save
         </button>

@@ -24,6 +24,9 @@ import { BsPiggyBank } from "react-icons/bs";
 import Transactions from "./Transactions";
 import LoadingScreen from "./LoadingScreen";
 import BasicInfo from "./BasicInfo";
+import Security from "./Security";
+import DefaultCurrency from "./DefaultCurrency";
+import Appearance from "./Appearance";
 
 function SettingsContent({
   showSidebar,
@@ -35,9 +38,9 @@ function SettingsContent({
   const [activeTab, setActiveTab] = useState("Basic info");
   const tabs = [
     { title: "Basic info", element: <BasicInfo /> },
-    { title: "Security", element: <BasicInfo /> },
-    { title: "Appearance", element: <BasicInfo /> },
-    { title: "Currencies", element: <BasicInfo /> },
+    { title: "Security", element: <Security /> },
+    { title: "Appearance", element: <Appearance /> },
+    { title: "Default Currency", element: <DefaultCurrency /> },
   ];
   useEffect(() => {
     setTimeout(() => {
@@ -72,7 +75,7 @@ function SettingsContent({
                   key={index}
                   className={`w-fit h-full whitespace-nowrap px-3 text-sm font-medium transition duration-200 ${
                     activeTab === tab.title
-                      ? "border-b-2 border-mainColor/80 text-lightBlackText/80"
+                      ? "border-b-2 border-mainColor text-lightBlackText/80"
                       : "border-b-0 border-transparent text-lightBlackText/50"
                   }`}
                   onClick={() => setActiveTab(tab.title)}
