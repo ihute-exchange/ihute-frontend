@@ -50,14 +50,19 @@ function Signup() {
         } else {
           // console.log(error);
         }
-      } finally{
-        navigate('/')
+      } finally {
+        navigate("/");
       }
     } else {
       setAuthing(false);
       setErrorPassword("Password doesn't match");
     }
   };
+
+  useEffect(() => {
+    document.title = "Sign up - ihute Truck Booking";
+  }, []);
+
   return (
     <>
       <div className="dark:bg-dark-body dark:text-[#f1f1f1] text-lightBlackText dark:bg-lightBlackText w-full h-fit min-h-svh flex flex-col text-sm text-text-color">
