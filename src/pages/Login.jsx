@@ -85,7 +85,6 @@ function Login() {
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 name="email"
-                autoComplete="on"
                 placeholder="E.g. johndoe@gmail.com"
                 className="w-full h-[40px] ring-1 ring-lightCardStrongGrayBg dark:ring-[#333] p-4 focus:ring-2 focus:ring-mainColor dark:bg-[#282828] rounded-md placeholder:text-text-color/40 outline-none "
                 id="email"
