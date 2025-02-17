@@ -47,7 +47,7 @@ function Login() {
   };
 
   useEffect(() => {
-    document.title = "Login - Upfront";
+    document.title = "Login - ihute Truck Booking";
   }, []);
   return (
     <>

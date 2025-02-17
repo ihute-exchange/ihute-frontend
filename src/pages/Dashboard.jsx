@@ -23,7 +23,7 @@ function Dashboard() {
       <div className="flex w-full h-svh bg-white gap-0 relative overflow-hidden">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Dashboard</title>
+          <title>Dashboard - ihute Truck Booking</title>
           <link rel="canonical" href="http://ihute.onrender.com/" />
         </Helmet>
         <Sidebar closeSidebar={closeSidebar} />
