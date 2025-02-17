@@ -16,7 +16,7 @@ export default {
         lightGrayText: "#c2c2c2",
         lightWhiteText: "#f0f0f0",
         lightHoverBg: "#eff6ff",
-        lightSidebarBg: "#f9fafb",
+        lightSidebarBg: "#ffffff",
       },
       fontFamily: {
         suse: ["SUSE", "sans-serif"]

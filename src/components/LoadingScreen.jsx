@@ -11,23 +11,23 @@ ring.register();
 function LoadingScreen() {
   return (
     <div className="w-full h-full flex-1 bg-white absolute top-0 left-0 z-20 flex items-start p-16 justify-center ">
-      <svg class="containerSpinner" viewBox="0 0 40 40" height="40" width="40">
+      <svg className="containerSpinner" viewBox="0 0 40 40" height="40" width="40">
         <circle
-          class="track"
+          className="track"
           cx="20"
           cy="20"
           r="17.5"
-          pathlength="100"
-          stroke-width="5px"
+          pathLength="100"
+          strokeWidth="5px"
           fill="none"
         />
         <circle
-          class="car"
+          className="car"
           cx="20"
           cy="20"
           r="17.5"
-          pathlength="100"
-          stroke-width="5px"
+          pathLength="100"
+          strokeWidth="5px"
           fill="none"
         />
       </svg>
